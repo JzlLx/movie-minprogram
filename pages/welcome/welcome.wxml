@@ -1,0 +1,9 @@
+<view class='container'>
+  <image src='/images/avatar/1.jpg' class='user-avatar'></image>
+  <text class='user-name' bind:tap="onWel">欢迎来到Jz的小程序</text>  <!-- text中的\n会被解析为换行符-->
+
+  <view class='moto-container' bind:tap='onTap'>
+   <text class='moto'>开启小程序之旅</text>
+  </view>
+  <!--bind和catch都用于绑定事件，但bind绑定的事件会向上冒泡，而catch会阻止事件冒泡-->
+</view>

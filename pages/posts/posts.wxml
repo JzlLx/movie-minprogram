@@ -1,0 +1,27 @@
+<import src="post-item/post-item-template.wxml"/>
+<view>
+ <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="3500" catchtap='onSwiper'>
+  <swiper-item>
+  <!--给每个组件添加catchtap='onSwiperTap'可以实现同样效果，但利用事件冒泡代码更简洁-->
+     <image  src='/images/wx.png' data-postId='5'></image> 
+  </swiper-item>
+  <swiper-item>
+     <image src='/images/vr.png' data-postId='4'></image>
+  </swiper-item>
+  <swiper-item>
+     <image src='/images/iqiyi.png' data-postId='6'></image>
+  </swiper-item>
+ </swiper>
+
+<block wx:for="{{post_key}}" wx:for-item="item" wx:key="1"> 
+<!--wx:for-item用于指定遍历子元素的名字，若省略，则默认子元素名字为item ，即将这句删除 下面依然能运行 -->
+<!--wx:for-index用于返回子元素的序号，若省略，则默认序号的变量为index -->
+
+ <view catchtap='onPostTap' data-postId="{{item.postId}}">
+  <template is="postItem" data="{{...item}}" />
+ </view>
+ 
+</block>
+
+
+</view>
